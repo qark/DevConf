@@ -1,0 +1,72 @@
+<!DOCTYPE html> 
+<html> 
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <title>DevConf 2012</title> 
+  <link rel="stylesheet" href="themes/rh-theme.min.css" />
+  <link rel="stylesheet" href="jquery.mobile.structure-1.0.min.css" />
+  <script src="jquery-1.7.1.min.js"></script>
+  <script src="jquery.mobile-1.0.min.js"></script>
+  <script src="jsrender.js"></script>
+  <script type="text/javascript">
+    $("#schedulePage").live('pageinit',function(event) {
+      $.getJSON("schedule.json", function(data) {
+        // TODO: filter data by type and date
+        $("#talksList").html($("#itemTemplate").render(data));
+        $("#talksList").listview("refresh");
+        $("#labsList").html($("#itemTemplate").render(data));
+        $("#labsList").listview("refresh");
+      }).error(function(data) { alert("error") });
+    })
+  </script>
+
+</head>
+
+<body> 
+
+<script id="itemTemplate" type="text/x-jquery-tmpl"> 
+{{#each items}}
+<li><a href="details.html">
+<h3>{{=topic}} in {{=room}} {{=date}}</h3>
+<p>{{=description}}</p>
+<p class="ui-li-aside"><strong>{{=start}}</strong></p>
+</a>
+</li>
+{{/each}}
+</script>
+
+<div data-role="page" id="schedulePage">
+
+  <div data-role="header">
+    <h1>DevConf 2012</h1>
+    <a href="index.html" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-right jqm-home">Home</a>
+  </div><!-- /header -->
+
+  <div data-role="content">
+    <div data-role="collapsible-set">
+
+    <div data-role="collapsible">
+      <h3>Talks</h3>
+      <p>
+        <ul data-role="listview" id="talksList">
+        </ul>
+      </p>
+    </div>
+	
+    <div data-role="collapsible">
+      <h3>Labs</h3>
+      <p>
+        <ul data-role="listview" id="labsList">
+        </ul>
+      </p>
+    </div>
+
+    </div><!-- /collabsible-set -->
+  </div><!-- /content -->
+	
+</div><!-- /page -->
+
+</body>
+</html>
