@@ -1,6 +1,7 @@
 #!/usr/bin/python
 import csv
 import json
+import os
 import sys
 import time
 
@@ -21,8 +22,8 @@ if __name__ == "__main__":
         sys.exit(1)
 
     # convert csv to json
-    inFile, outFile = sys.argv[1:]
-    csv2json(open(inFile, "r"), open(outFile + ".json", "w"))
+    inFile, outDir = sys.argv[1:]
+    csv2json(open(inFile, "r"), open(os.path.join(outDir, "schedule.json"), "w"))
     
     # write timestamp
-    open(outFile + "-ts.json", "w").write(json.dumps(int(time.time())))
+    open(os.path.join(outDir, "schedule-ts.json"), "w").write(json.dumps(int(time.time())))

@@ -15,23 +15,21 @@
 
 <body> 
 
-<div data-role="page" data-position="fixed" id="schedulePage">
+<div data-role="page" id="schedulePage">
 
   <script id="itemTemplate" type="text/x-jquery-tmpl"> 
-  {{#each items}}
   {{#if display}}
-  <li><a href="details.html">
-  <h3>{{=topic}}<span class="ui-li-count">{{=tags}}</span></h3>
-  <p>{{=start}} - {{=end}} in {{=room}}</p>
-  </a>
-  </li>
+  <li><a class="event-details" onclick="displayDetails({{=eventIndex}})">
+    <h3>{{=topic}}<span class="ui-li-count">{{=tags}}</span></h3>
+    <p>{{=start}} - {{=end}} in {{=room}}</p>
+  </a></li>
   {{/if}}
-  {{/each}}
   </script>
 
   <div data-role="header">
+    <a href="index.html" data-icon="back" data-direction="reverse" data-rel="back">Back</a>
     <h1>DevConf 2012</h1>
-    <a href="index.html" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-right jqm-home">Home</a>
+    <a href="index.html" data-icon="home" data-direction="reverse" class="ui-btn-right jqm-home">Home</a>
   </div><!-- /header -->
 
   <div data-role="content">	
