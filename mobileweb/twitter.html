@@ -15,15 +15,15 @@
 
 <body> 
 
-<div data-role="page" id="schedulePage">
+<div data-role="page" id="twitterPage">
 
-  <script id="itemTemplate" type="text/x-jquery-tmpl"> 
-  {{#if display}}
-  <li><a class="event-details" onclick="displayDetails({{=eventIndex}})">
-    <h3>{{=topic}}<span class="ui-li-count">{{=tags}}</span></h3>
-    <p>{{=start}} - {{=end}} in {{=room}}</p>
-  </a></li>
-  {{/if}}
+  <script id="tweetTemplate" type="text/x-jquery-tmpl">
+  <li><p style="white-space:normal">
+    <img src="{{=profile_image_url}}" style="float: left; margin-right: 5px; margin-bottom: 5px;"/>
+    {{=text}}
+  </p><p>
+    <em>{{=created_at}} by {{=from_user}}</em>
+  </p></li>
   </script>
 
   <div data-role="header" data-theme="b">
@@ -34,20 +34,14 @@
 
   <div data-role="content">	
     <p></p>
-    <ul data-role="listview" id="eventList">
-      <li data-role="list-divider">
-        <h3>Talks</h3>
-      </li>
-      <li id="talkItems" />Loading data...</li>
-      <li data-role="list-divider">
-        <h3>Labs</h3>
-      </li>
-      <li id="labItems" />Loading data...</li>
+    <p></p>
+    <ul data-role="listview" id="twitterList">
+      <li id="tweets" />Loading data...</li>
     </ul>
   </div><!-- /content -->
 
   <div data-role="footer" class="ui-bar" data-theme="b">
-    <a href="#" data-role="button" data-icon="refresh" onclick="loadAndRenderSchedule()"><span id="schedule-refresh">Refresh</span></a>
+    <a href="#" data-role="button" data-icon="refresh" onclick="loadAndRenderTweets()"><span id="twitter-refresh">Refresh</span></a>
   </div><!-- /footer -->
 
 </div><!-- /page -->

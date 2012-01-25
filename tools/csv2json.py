@@ -18,7 +18,7 @@ def csv2json(inp, out):
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
-        print >>sys.stderr, "Filename expected"
+        print >>sys.stderr, "Dirname expected"
         sys.exit(1)
 
     # convert csv to json
