@@ -8,6 +8,7 @@ var remoteScheduleTsURL = "http://m.devconf.cz/schedule-ts.json";
 // initialize global variables
 var schedule = null;
 var currentEvent = null;
+var scheduleDate = "2012-02-17";
 
 // remove record for debugging purposes
 // localStorage.removeItem("schedule");
@@ -91,6 +92,7 @@ function loadAndRenderScheduleCont(url) {
 
 function filterSchedule(items, type, date) {
   var count = 0;
+  var lastStart = "UNDEF";
   $.each(items, function(i, item) {
      var display = true;
      if (item["type"] != type) {
@@ -104,8 +106,19 @@ function filterSchedule(items, type, date) {
      }
      item["eventIndex"] = i;
      item["display"] = display;
+     if (display) {
+       item["showTime"] = item["start"] != lastStart;
+       lastStart = item["start"];
+     } else {
+       item["showTime"] = false;
+     }
      count++;
   });
+}
+
+function displaySchedule(date) {
+  scheduleDate = date;
+  $.mobile.changePage("schedule.html");
 }
 
 function displayDetails(eventNum) {
@@ -119,12 +132,13 @@ function displayDetails(eventNum) {
 
 function renderSchedule(schedule) {
   console.log("DEFCONF: rendering schedule");
-  filterSchedule(schedule["items"], "talk", "2012-02-17");
+  filterSchedule(schedule["items"], "talk", scheduleDate);
   $("#talkItems").replaceWith($("#itemTemplate").render(schedule["items"]));
-  filterSchedule(schedule["items"], "lab", "2012-02-17");
+  filterSchedule(schedule["items"], "lab", scheduleDate);
   $("#labItems").replaceWith($("#itemTemplate").render(schedule["items"]));
   // refresh views
   $("#eventList").listview("refresh");
+  $("#eventList2").listview("refresh");
   scheduleRendered = true;
 }
 

@@ -6,21 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"> 
   <title>DevConf 2012</title> 
   <link rel="stylesheet" href="themes/rh-theme.min.css" />
-  <link rel="stylesheet" href="jquery.mobile.structure-1.0.min.css" />
+  <link rel="stylesheet" href="jquery.mobile.structure-1.0.1.min.css" />
   <script src="jquery-1.6.4.min.js"></script>
-  <script src="jquery.mobile-1.0.min.js"></script>
+  <script src="jquery.mobile-1.0.1.min.js"></script>
   <script src="jsrender.js"></script>
-  <script src="application.js"></script>
-</head>
+  <script src="application.js">
+  </script>
+</head> 
 
 <body> 
 
 <div data-role="page" id="eventDetailsPage">
 
   <script id="contentTemplate" type="text/x-jquery-tmpl">
-    <h3>{{=topic}}</h3>
+    <h2>{{=topic}}</h2>
     <p><em>{{=speaker}}</em></p>
-    <p>{{=tags}}</p>
+    <p>{{=start}} - {{=end}} in {{=room}}</p>
+    <p>Tags: {{=tags}}</p>
     <p>{{=description}}</p>
     <a href="#schedulePage" data-role="button" data-rel="back">Close</a>
   </script>

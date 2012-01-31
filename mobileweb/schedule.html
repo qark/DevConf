@@ -6,12 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"> 
   <title>DevConf 2012</title> 
   <link rel="stylesheet" href="themes/rh-theme.min.css" />
-  <link rel="stylesheet" href="jquery.mobile.structure-1.0.min.css" />
+  <link rel="stylesheet" href="jquery.mobile.structure-1.0.1.min.css" />
   <script src="jquery-1.6.4.min.js"></script>
-  <script src="jquery.mobile-1.0.min.js"></script>
+  <script src="jquery.mobile-1.0.1.min.js"></script>
   <script src="jsrender.js"></script>
-  <script src="application.js"></script>
-</head>
+  <script src="application.js">
+  </script>
+</head> 
 
 <body> 
 
@@ -19,9 +20,12 @@
 
   <script id="itemTemplate" type="text/x-jquery-tmpl"> 
   {{#if display}}
-  <li><a class="event-details" onclick="displayDetails({{=eventIndex}})">
-    <h3>{{=topic}}<span class="ui-li-count">{{=tags}}</span></h3>
-    <p>{{=start}} - {{=end}} in {{=room}}</p>
+  {{#if showTime}}
+  <li data-role="list-divider">{{=start}}</li>
+  {{/if}}
+  <li><a class="event-details" data-rel="dialog" onclick="displayDetails({{=eventIndex}})">
+    <p><strong>{{=topic}}<span class="ui-li-count">{{=tags}}</strong></br></br>
+    {{=start}} - {{=end}} in {{=room}}</p>
   </a></li>
   {{/if}}
   </script>
@@ -32,18 +36,19 @@
     <a href="index.html" data-icon="home" data-direction="reverse" class="ui-btn-right jqm-home">Home</a>
   </div><!-- /header -->
 
-  <div data-role="content">	
-    <p></p>
-    <ul data-role="listview" id="eventList">
-      <li data-role="list-divider">
-        <h3>Talks</h3>
-      </li>
-      <li id="talkItems" />Loading data...</li>
-      <li data-role="list-divider">
-        <h3>Labs</h3>
-      </li>
-      <li id="labItems" />Loading data...</li>
-    </ul>
+  <div data-role="content">
+    <div data-role="collapsible" data-content-theme="a" data-theme="b">	
+      <h2>Talks</h2>
+      <p><ul data-role="listview" id="eventList">
+        <li id="talkItems" />Loading data...</li>
+      </ul></p>
+    </div>
+    <div data-role="collapsible" data-content-theme="a" data-theme="b">	
+      <h2>Labs</h2>      
+      <p><ul data-role="listview" id="eventList2">
+        <li id="labItems" />Loading data...</li>
+      </ul></p>
+    </div>
   </div><!-- /content -->
 
   <div data-role="footer" class="ui-bar" data-theme="b">
