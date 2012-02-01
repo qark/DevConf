@@ -10,7 +10,19 @@
   <script src="jquery-1.6.4.min.js"></script>
   <script src="jquery.mobile-1.0.1.min.js"></script>
   <script src="jsrender.js"></script>
-  <script src="application.js">
+  <script src="application.js"></script>
+  <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-28854907-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
   </script>
 </head> 
 
@@ -19,13 +31,25 @@
 <div data-role="page">
 
   <div data-role="header" data-theme="b">
-    <a href="index.html" data-icon="back" data-direction="reverse" data-rel="back">Back</a>
     <h1>DevConf 2012</h1>
     <a href="index.html" data-icon="home" data-direction="reverse" class="ui-btn-right jqm-home">Home</a>
   </div><!-- /header -->
 
   <div data-role="content">	
-    <p>This will contain some basic information about the conference</p>
+    <p>Developer Conference is a two-day conference that is
+    focused on Red Hat, Fedora, and JBoss technologies. All talks and workshops
+    are highly technical and targer developers, admins, and computer science students.
+    It's organized by <a href="http://www.redhat.com">Red Hat Czech</a>.</p>
+    <dl>
+      <dt><strong>When:</strong></dt>
+      <dd>February 2012, Friday 17th - Saturday 18th</dd>
+      <dt><strong>Where:</strong></dt>
+      <dd>Faculty of Informatics, Masaryk University<br>Botanická 554/68a<br>602 00 Brno-Ponava<br>Czech Republic<br/>
+      <a href="geo:49.2099831,16.5989158" data-role="button" data-icon="search" data-inline="true">Map</a></dd>
+      <dt><strong>Admission:</strong></dt>
+      <dd>Free<br/>
+      <a href="http://eventle.com/developer-conference-2012/1300" data-role="button" data-icon="star" data-inline="true">Register</a>
+    </dl>
   </div><!-- /content -->
 
 </div><!-- /page -->

@@ -104,6 +104,12 @@ function filterSchedule(items, type, date) {
      if (count > 1000) {
        display = false;
      }
+     if (item["speaker"] == "N/A") {
+       item["speaker"] = "";
+     }
+     if (item["description"] == "N/A") {
+       item["description"] = "";
+     }
      item["eventIndex"] = i;
      item["display"] = display;
      if (display) {
@@ -144,7 +150,7 @@ function renderSchedule(schedule) {
 
 function loadAndRenderTweets() {
   $("#twitter-refresh").text("Refreshing...");
-  $.getJSON("http://search.twitter.com/search.json?q=%23devconf&callback=?", function(data) {
+  $.getJSON("http://search.twitter.com/search.json?q=%23devconf&rpp=10&callback=?", function(data) {
     console.log("DEVCONF: twitter data loaded");
     $("#tweets").replaceWith($("#tweetTemplate").render(data["results"]));
     $("#twitterList").listview("refresh");

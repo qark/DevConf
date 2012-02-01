@@ -10,7 +10,19 @@
   <script src="jquery-1.6.4.min.js"></script>
   <script src="jquery.mobile-1.0.1.min.js"></script>
   <script src="jsrender.js"></script>
-  <script src="application.js">
+  <script src="application.js"></script>
+  <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-28854907-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
   </script>
 </head> 
 
@@ -23,15 +35,17 @@
   {{#if showTime}}
   <li data-role="list-divider">{{=start}}</li>
   {{/if}}
-  <li><a class="event-details" data-rel="dialog" onclick="displayDetails({{=eventIndex}})">
-    <p><strong>{{=topic}}<span class="ui-li-count">{{=tags}}</strong></br></br>
-    {{=start}} - {{=end}} in {{=room}}</p>
-  </a></li>
+  <li>
+    <h3 style="white-space:normal">{{=topic}}<span class="ui-li-count">{{=tags}}</span></h3>
+    <p style="white-space:normal"><em>{{=speaker}}</em></br>
+    <strong>{{=start}} - {{=end}}</strong> in <strong>{{=room}}</strong></br>
+    {{=description}}
+    </p>
+  </li>
   {{/if}}
   </script>
 
   <div data-role="header" data-theme="b">
-    <a href="index.html" data-icon="back" data-direction="reverse" data-rel="back">Back</a>
     <h1>DevConf 2012</h1>
     <a href="index.html" data-icon="home" data-direction="reverse" class="ui-btn-right jqm-home">Home</a>
   </div><!-- /header -->

@@ -10,7 +10,19 @@
   <script src="jquery-1.6.4.min.js"></script>
   <script src="jquery.mobile-1.0.1.min.js"></script>
   <script src="jsrender.js"></script>
-  <script src="application.js">
+  <script src="application.js"></script>
+  <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-28854907-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
   </script>
 </head> 
  
@@ -20,13 +32,19 @@
 <div data-role="page">
 
   <div data-role="header" data-theme="b">
-    <a href="index.html" data-icon="back" data-direction="reverse" data-rel="back">Back</a>
     <h1>DevConf 2012</h1>
     <a href="index.html" data-icon="home" data-direction="reverse" class="ui-btn-right jqm-home">Home</a>
   </div><!-- /header -->
 
   <div data-role="content">	
-    <p>This will contain some basic information about contacts</p>
+    <dl> 
+      <dt><strong>Jiří Eischmann</strong><dt>
+      <dd>E-mail: <a href="mailto:jeischma@redhat.com">jeischma@redhat.com</a><br/>Phone: <a href="tel:+420604346394">+420 604 346 394</a><br/>Organization team lead</dd>
+      <dt><strong>Radek Vokál</strong><dt>
+      <dd>E-mail: <a href="mailto:rvokal@redhat.com">rvokal@redhat.com</a><br/>Phone: <a href="tel:+420608437507">+420 608 437 507</a><br/>Red Hat<dd>
+      <dt><strong>Jaroslav Řezník</strong></dt>
+      <dd>E-mail: <a href="mailto:jreznik@redhat.com">jreznik@redhat.com</a><br/>Phone: <a href="tel:+420602797774">+420 602 797 774</a><br/>Fedora KDE SIG FAD<dd>
+    <dl>
   </div><!-- /content -->
 
 </div><!-- /page -->
