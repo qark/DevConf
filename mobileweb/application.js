@@ -16,7 +16,7 @@ var scheduleDate = "2012-02-17";
 //
 // Event handlers
 //
-$("#schedulePage").live('pageinit', function(event) {
+$("#schedulePage").live('pageshow', function(event) {
   console.log("DEVCONF: #schedulePage pageinit event");
   // try local storage first
   if (localStorage) {
@@ -27,13 +27,7 @@ $("#schedulePage").live('pageinit', function(event) {
   return false;
 })
 
-$("#eventDetailsPage").live('pagebeforecreate', function(event) {
-  console.log("DEVCONF: #eventDetailsPage pageinit event");
-  $("#content").html($("#contentTemplate").render(currentEvent));
-  return false;
-})
-
-$("#twitterPage").live('pagebeforecreate', function(event) {
+$("#twitterPage").live('pageshow', function(event) {
   console.log("DEVCONF: #twitterPage pageinit event");
   loadAndRenderTweets();
 })
@@ -79,25 +73,22 @@ function loadAndRenderScheduleCont(url) {
     }
   }).error(function(data) {
     console.warn("DEVCONF: Cannot load", url);
-    $("#talkItems").text("Cannot load data...");
-    $("#labItems").text("Cannot load data...");
+    $("#eventItems").text("Cannot load data...");
     if (url != localScheduleURL) {
       // last attempt - load local schedule
       loadAndRenderScheduleCont(localScheduleURL);
     }
   }).complete(function () {
     $("#schedule-refresh").text("Refresh");
+    console.log("DEVCONF: Schedule finished");
   });
 }
 
-function filterSchedule(items, type, date) {
+function filterSchedule(items, date) {
   var count = 0;
   var lastStart = "UNDEF";
   $.each(items, function(i, item) {
      var display = true;
-     if (item["type"] != type) {
-       display = false;
-     }
      if (item["date"] != date) {
        display = false;
      }
@@ -115,37 +106,25 @@ function filterSchedule(items, type, date) {
      if (display) {
        item["showTime"] = item["start"] != lastStart;
        lastStart = item["start"];
+       count++;
      } else {
        item["showTime"] = false;
      }
-     count++;
   });
 }
 
 function displaySchedule(date) {
   scheduleDate = date;
+  console.log("DEFCONF: displaying schedule for", scheduleDate);
   $.mobile.changePage("schedule.html");
 }
 
-function displayDetails(eventNum) {
-  if (eventNum == null) {
-    eventNum = 0;
-  }
-  console.log("DEFCONF: display details for", schedule["items"][eventNum]["topic"]);
-  currentEvent = schedule["items"][eventNum];
-  $.mobile.changePage("details.html");
-}
-
 function renderSchedule(schedule) {
-  console.log("DEFCONF: rendering schedule");
-  filterSchedule(schedule["items"], "talk", scheduleDate);
-  $("#talkItems").replaceWith($("#itemTemplate").render(schedule["items"]));
-  filterSchedule(schedule["items"], "lab", scheduleDate);
-  $("#labItems").replaceWith($("#itemTemplate").render(schedule["items"]));
+  console.log("DEFCONF: rendering schedule for", scheduleDate);
+  filterSchedule(schedule["items"], scheduleDate);
+  $("#eventItems").replaceWith($("#itemTemplate").render(schedule["items"]));
   // refresh views
   $("#eventList").listview("refresh");
-  $("#eventList2").listview("refresh");
-  scheduleRendered = true;
 }
 
 function loadAndRenderTweets() {
