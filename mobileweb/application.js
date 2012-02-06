@@ -19,10 +19,10 @@ var scheduleDate = "2012-02-17";
 $("#schedulePage").live('pageshow', function(event) {
   console.log("DEVCONF: #schedulePage pageinit event");
   // try local storage first
-  if (localStorage) {
-    console.log("DEVCONF: loading schedule from local storage");
+  try {
     schedule = JSON.parse(localStorage.getItem("schedule"));
-  }
+    console.log("DEVCONF: schedule loaded from local storage");
+  } catch(e) {};
   loadAndRenderSchedule();
   return false;
 })
@@ -67,10 +67,10 @@ function loadAndRenderScheduleCont(url) {
     console.log("DEVCONF: loaded", url);
     schedule = data
     renderSchedule(schedule)
-    if (localStorage) {
-      console.log("DEVCONF: storing schedule to local storage");
+    try {
       localStorage.setItem("schedule", JSON.stringify(schedule));
-    }
+      console.log("DEVCONF: schedule stored to local storage");
+    } catch(e) {};
   }).error(function(data) {
     console.warn("DEVCONF: Cannot load", url);
     $("#eventItems").text("Cannot load data...");
