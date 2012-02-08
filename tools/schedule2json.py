@@ -25,6 +25,13 @@ def parseRooms(record):
             result.append((name, index)) 
     return result
 
+def parseRoomName(name):
+    if "-" in name:
+        room, location = name.split("-")
+        return room.strip(), "FIMUNI - %s" % location.strip()
+    else:
+        return name, "FIMUNI"
+
 EVENT_PATTERN1 = re.compile("^(?P<speaker>[\w\s,]+)-(?P<topic>[^[]+)(\[(?P<tags>[\w\s,]+)\])?$", flags = re.UNICODE)
 EVENT_PATTERN2 = re.compile("^(?P<topic>[^[]+)(\[(?P<tags>[\w\s,]+)\])?$", flags = re.UNICODE)
 
@@ -102,14 +109,15 @@ def schedule2json(inp, presentations, timestamp):
             if record[index].startswith("Social event"):
                 output["type"] = "social"
                 name = "N/A"
+            room, location = parseRoomName(name)
             output["date"] = date
             output["start"] = start
             output["end"] = end
-            output["room"] = name
+            output["room"] = room
             output["speaker"] = "N/A"
             output["topic"] = "N/A"
             output["tags"] = ""
-            output["location"] = "FIMUNI"
+            output["location"] = location
             output["timestamp"] = convertDate(date, start)
             output["timestamp_end"] = convertDate(date, end)
             output.update(parseEventDesc(record[index]))

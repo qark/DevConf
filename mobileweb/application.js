@@ -43,7 +43,7 @@ function loadAndRenderSchedule() {
     $.getJSON(remoteScheduleTsURL, function(data) {
       console.log("DEVCONF: remote schedule timestamp", data)
       console.log("DEVCONF: local schedule timestamp ", schedule["timestamp"]);
-      if (data > schedule["timestamp"]) {
+      if (data > schedule["timestamp"] || true) {
         console.log("DEVCONF: remote schedule is newer, updating...");
         loadAndRenderScheduleCont(remoteScheduleURL);
       } else {
