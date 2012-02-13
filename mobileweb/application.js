@@ -14,25 +14,6 @@ var scheduleDate = "2012-02-17";
 // localStorage.removeItem("schedule");
 
 //
-// Event handlers
-//
-$("#schedulePage").live('pageshow', function(event) {
-  console.log("DEVCONF: #schedulePage pageinit event");
-  // try local storage first
-  try {
-    schedule = JSON.parse(localStorage.getItem("schedule"));
-    console.log("DEVCONF: schedule loaded from local storage");
-  } catch(e) {};
-  loadAndRenderSchedule();
-  return false;
-})
-
-$("#twitterPage").live('pageshow', function(event) {
-  console.log("DEVCONF: #twitterPage pageinit event");
-  loadAndRenderTweets();
-})
-
-//
 // General functions
 //
 function loadAndRenderSchedule() {
@@ -41,7 +22,7 @@ function loadAndRenderSchedule() {
     // check timestamp of remote schedule
     console.log("DEVCONF: Getting remote schedule timestamp from", remoteScheduleTsURL);
     $.getJSON(remoteScheduleTsURL, function(data) {
-      console.log("DEVCONF: remote schedule timestamp", data)
+      console.log("DEVCONF: remote schedule timestamp", data);
       console.log("DEVCONF: local schedule timestamp ", schedule["timestamp"]);
       if (data > schedule["timestamp"] || true) {
         console.log("DEVCONF: remote schedule is newer, updating...");
@@ -65,12 +46,12 @@ function loadAndRenderScheduleCont(url) {
   console.log("DEVCONF: Loading schedule from", url);
   $.getJSON(url, function(data) {
     console.log("DEVCONF: loaded", url);
-    schedule = data
-    renderSchedule(schedule)
+    schedule = data;
+    renderSchedule(schedule);
     try {
       localStorage.setItem("schedule", JSON.stringify(schedule));
       console.log("DEVCONF: schedule stored to local storage");
-    } catch(e) {};
+    } catch(e) {}
   }).error(function(data) {
     console.warn("DEVCONF: Cannot load", url);
     $("#eventItems").text("Cannot load data...");
@@ -106,7 +87,7 @@ function filterSchedule(items, date) {
      if (display) {
        item["showTime"] = item["start"] != lastStart;
        lastStart = item["start"];
-       count++;
+       count = count + 1;
      } else {
        item["showTime"] = false;
      }
@@ -117,6 +98,7 @@ function displaySchedule(date) {
   scheduleDate = date;
   console.log("DEFCONF: displaying schedule for", scheduleDate);
   $.mobile.changePage("schedule.html");
+  return false;
 }
 
 function renderSchedule(schedule) {
@@ -139,5 +121,25 @@ function loadAndRenderTweets() {
   }).complete(function () {
     $("#twitter-refresh").text("Refresh");
   });
+  return false;
 }
 
+//
+// Event handlers
+//
+$("#schedulePage").live('pageshow', function(event) {
+  console.log("DEVCONF: #schedulePage pageinit event");
+  // try local storage first
+  try {
+    schedule = JSON.parse(localStorage.getItem("schedule"));
+    console.log("DEVCONF: schedule loaded from local storage");
+  } catch(e) {}
+  loadAndRenderSchedule();
+  return false;
+});
+
+$("#twitterPage").live('pageshow', function(event) {
+  console.log("DEVCONF: #twitterPage pageinit event");
+  loadAndRenderTweets();
+  return false;
+});
