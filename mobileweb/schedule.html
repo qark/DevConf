@@ -36,9 +36,10 @@
   <li data-role="list-divider"><span style="font-size: 150%;">{{=start}}</span>, {{=date}}</li>
   {{/if}}
   <li>
-    <h3 style="white-space:normal">{{=topic}}<span class="ui-li-count">{{=tags}}</span></h3>
-    <p style="white-space:normal"><em>{{=speaker}}</em></br>
-    <strong>{{=start}} - {{=end}}</strong> in <strong>{{=room}}</strong></br>
+    <span class="ui-li-count">{{=tags}}</span>
+    <h3 style="white-space:normal">{{=topic}}</h3>
+    <p style="white-space:normal; margin-right: 1em;"><em>{{=speaker}}</em><br/>
+    <strong>{{=start}} - {{=end}}</strong> in <strong>{{=room}}</strong><br/>
     {{=description}}
     </p>
   </li>
@@ -51,7 +52,7 @@
   </div><!-- /header -->
 
   <div data-role="content">
-    <p><ul data-role="listview" id="eventList">
+    <p><ul data-role="listview" id="eventList" data-filter="true" data-filter-placeholder="Search...">
       <li id="eventItems" />Loading data...</li>
     </ul></p>
   </div><!-- /content -->
