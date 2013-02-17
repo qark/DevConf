@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:ng="http://angularjs.org/">
+
+<head>
+  <meta charset="utf-8">
+  <title>DevConf 2013</title>
+  <link type="text/css" href="style.css" rel="stylesheet">
+  <script src="lib/angular-0.9.19.min.js" ng:autobind></script>
+  <script src="controllers.js"></script>
+</head>
+<body ng:controller="ScheduleCtrl">
+
+<div id="schedule" class="videoblock">
+    <div id="header">Developer Conference 2013<br /><img src="rhlogo.png"/></div>
+    <div class="qrcode">
+      <img src="qrcode-android-store.png"/>
+      OpenHouse 2012 in <strong>Android Store</strong>
+    </div>
+    <div class="qrcode">
+      <img src="qrcode-mobileweb.png" />
+      Mobile website <strong>http://bit.ly/openh2012</strong>
+    </div>
+    <div id="clock">{{currentTime}}</div>
+</div>
+
+
+<div id="schedule" class="block" ng:repeat="block in eventBlocks">
+  <div class="name">{{block.start}}</div>
+  <ul>
+    <li ng:repeat="event in block.events">
+      <div class="session current">
+        <span class="topic">{{event.topic}}</span> in {{event.room}} ({{event.location}})
+        <div class="descr">{{event.description}}</div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+</body>
+</html>
+

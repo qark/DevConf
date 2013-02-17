@@ -1,0 +1,150 @@
+body {
+    background-color: #f7f3dc;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    font-family: sans;
+}
+
+.block {
+    float: left;
+    width: 33%;
+    height: 760px;
+    border-radius: 5px;
+    background-color: #dedcc1;
+    margin: 0.1%;
+    overflow: hidden;
+}
+
+.videoblock {
+    float: left;
+    width: 33%;
+    height: 760px;
+    border-radius: 5px;
+    background-color: #000000;
+    margin: 0.1%;
+    overflow: hidden;
+}
+
+div .name {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: #cc0000;
+    color: #fff;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 3px;
+}
+
+#header {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    vertical-align: middle;
+    text-align: center;
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#clock {
+    clear: both;
+    padding-top: 5%;
+    font-size: 30px;
+    color: #fff;
+    background-color: #000;
+    font-weight: bold;
+    text-align: center;
+}
+
+.qrcode {
+    float: left;
+    width: 40%;
+    margin-left: 5%;
+    margin-right: 5%;
+    color: #fff;
+    text-align: center;
+}
+
+.qrcode img {
+   width: 90%;
+}
+
+ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0;
+}
+
+li {
+    border-radius: 5px;
+    background-color: #dedcc1;
+    margin: 4px;
+    overflow: hidden;
+}
+
+.session {
+    padding: 5px;
+    border-bottom: 1px solid #fff;
+}
+
+.session .topic {
+    font-weight: bold;
+}
+
+.session .descr {
+    text-align: left;
+    font-size: small;
+    color: #666;
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.current .topic {
+}
+
+.current{
+    background-color: #fff;
+}
+
+/* not used
+
+
+.feed {
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    float: right;
+    width: 27.5%;
+    margin: 4px;
+}
+
+
+
+
+.session .time {
+    background: url(clock.png) no-repeat;
+    padding-left: 20px;
+}
+
+.future .descr {
+    display: none;
+}
+
+.fader {
+    background: url(bottom_gradient.png) no-repeat;
+    height: 30px;
+    z-index: 1;;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+
+
+.topic img {
+    float: right;
+}
+
+*/
