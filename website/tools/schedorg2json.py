@@ -29,6 +29,11 @@ def removeHTMLTags(text):
     assert "&nbsp;" not in text, text
     return text.strip()
 
+def sanitizeTopic(name):
+    if name.count("-") >= 1:
+        return name[name.find("-") + 1:].strip()
+    return name
+
 def schedule2json(inp, timestamp):
     result = list()
     date = None
@@ -47,7 +52,7 @@ def schedule2json(inp, timestamp):
         output["end"] = record["event_end"][-8:-3]
         output["room"] = record["venue"]
         output["speaker"] = record["speakers"]
-        output["topic"] = record["name"]
+        output["topic"] = sanitizeTopic(record["name"])
         output["description"] = removeHTMLTags(record.get("description", "N/A"))
         output["tags"] = []
         if "event_type" in record:

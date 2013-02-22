@@ -1,150 +1,189 @@
 body {
-    background-color: #f7f3dc;
-    border: 0;
+    font-family: sans-serif;
+    font-size: 1em;
     margin: 0;
     padding: 0;
-    font-family: sans;
-}
-
-.block {
-    float: left;
-    width: 33%;
-    height: 760px;
-    border-radius: 5px;
-    background-color: #dedcc1;
-    margin: 0.1%;
-    overflow: hidden;
-}
-
-.videoblock {
-    float: left;
-    width: 33%;
-    height: 760px;
-    border-radius: 5px;
-    background-color: #000000;
-    margin: 0.1%;
-    overflow: hidden;
-}
-
-div .name {
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    background-color: #cc0000;
-    color: #fff;
-    text-align: center;
-    font-size: 30px;
-    font-weight: bold;
-    padding: 3px;
-}
-
-#header {
-    padding-top: 3px;
-    padding-bottom: 3px;
-    vertical-align: middle;
-    text-align: center;
-    color: #fff;
-    font-size: 30px;
-    font-weight: bold;
-}
-
-#clock {
-    clear: both;
-    padding-top: 5%;
-    font-size: 30px;
-    color: #fff;
-    background-color: #000;
-    font-weight: bold;
-    text-align: center;
-}
-
-.qrcode {
-    float: left;
-    width: 40%;
-    margin-left: 5%;
-    margin-right: 5%;
-    color: #fff;
-    text-align: center;
-}
-
-.qrcode img {
-   width: 90%;
+    border: 0;
+    background-color: #f7f3dc;
 }
 
 ul {
     list-style: none;
-    margin: 0px;
+    margin: 0;
     padding: 0;
 }
 
-li {
-    border-radius: 5px;
-    background-color: #dedcc1;
-    margin: 4px;
+    li {
+        margin: 4px;
+        overflow: hidden;
+        border-radius: 5px;
+        background-color: #dedcc1;
+    }
+
+/* Blocks */
+
+    .block {
+        float: left;
+        width: 33.2%;
+        height: 660px;
+        margin: 0.1%;
+        border-radius: 8px;
+        background-color: #dedcc1;
+        overflow: hidden;
+
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box; 
+        box-sizing: border-box;
+    }
+
+        div .name {
+            color: #fff;
+            font-size: 1.6em;
+            font-weight: bold;
+            text-align: center;
+            padding: 3px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            background-color: #cc0000;
+        }
+
+        /* Session */
+
+        .session {
+            padding: 10px 12px;
+
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box; 
+            box-sizing: border-box;
+        }
+
+        .session .topic {
+            font-weight: bold;
+            line-height: 1.45em;
+            margin-bottom: 7px;
+        }
+
+        .session .speaker {
+            font-style: italic;
+        }
+
+        .session .descr {
+            width: 100%;
+            color: #666;
+            font-size: small;
+            text-align: left;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .session .tag {
+            color: #fff;
+            padding: 2px 4px;
+            border-radius: 5px;
+            background-color: #000;
+        }
+
+        .current {
+            background-color: #fff;
+        }
+
+            .current .topic {
+            }
+
+    /* Info block */
+
+    .infoblock {
+        position: relative;
+        float: left;
+        width: 33%;
+        height: 660px;
+        color: #fff;
+        margin: 0.1%;
+        padding-left: 160px;
+        border-radius: 8px;
+        background-color: #000;
+
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box; 
+        box-sizing: border-box;
+    }
+
+        #header {
+            font-size: 1.9em;
+            font-weight: bold;
+            text-align: center;
+            padding: 65px 15px 0px 15px;
+            background: url('rhlogo.png') center top no-repeat;
+        }
+
+        #clock {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            margin: 0 15px 1.5em 15px;
+            padding: 0.5em 0;
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+        }
+
+        #banner {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            float: left;
+            height: 100%;
+            width: 160px;
+            background: #ae0001 url('banner2.jpg') left top no-repeat;
+            margin-right: 1.5em;
+        }
+
+        #qrcodes {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+            #qrcodes div {
+                display: inline-block;
+                width: 49.5%;
+                text-align: center;
+                margin-bottom: 1em;
+
+                -moz-box-sizing: border-box;
+                -webkit-box-sizing: border-box; 
+                box-sizing: border-box;
+            }
+
+                #qrcodes div img {
+                   display: block;
+                   width: 78%;
+                   margin: 0 auto 0.8em auto;
+                }
+
+/* Tweets */
+
+#tweets {
+    clear: both;
+    height: 110px;
     overflow: hidden;
+    background: #fff;
 }
 
-.session {
-    padding: 5px;
-    border-bottom: 1px solid #fff;
-}
+    #tweets div {
+        display: inline-block;
+        width: 19%;
+        height: 100%;
+        vertical-align: top;
+        margin: 0 0 0.5% 0.5%;
+        padding: 0.5% 0.5% 0 0;
+        border-right: 1px dotted #ddd;
+ 
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box; 
+        box-sizing: border-box;
+    }
 
-.session .topic {
-    font-weight: bold;
-}
-
-.session .descr {
-    text-align: left;
-    font-size: small;
-    color: #666;
-    white-space: nowrap;
-    width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.current .topic {
-}
-
-.current{
-    background-color: #fff;
-}
-
-/* not used
-
-
-.feed {
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    float: right;
-    width: 27.5%;
-    margin: 4px;
-}
-
-
-
-
-.session .time {
-    background: url(clock.png) no-repeat;
-    padding-left: 20px;
-}
-
-.future .descr {
-    display: none;
-}
-
-.fader {
-    background: url(bottom_gradient.png) no-repeat;
-    height: 30px;
-    z-index: 1;;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-}
-
-
-.topic img {
-    float: right;
-}
-
-*/
+    #tweets div img {
+        float: left;
+        margin: 0 10px 0px 0;
+    }
