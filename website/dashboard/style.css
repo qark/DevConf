@@ -1,6 +1,6 @@
 body {
     font-family: sans-serif;
-    font-size: 1em;
+    font-size: 0.85em;
     margin: 0;
     padding: 0;
     border: 0;
@@ -25,7 +25,7 @@ ul {
     .block {
         float: left;
         width: 33.2%;
-        height: 660px;
+        height: 650px;
         margin: 0.1%;
         border-radius: 8px;
         background-color: #dedcc1;
@@ -97,7 +97,7 @@ ul {
         position: relative;
         float: left;
         width: 33%;
-        height: 660px;
+        height: 650px;
         color: #fff;
         margin: 0.1%;
         padding-left: 160px;
@@ -113,8 +113,8 @@ ul {
             font-size: 1.9em;
             font-weight: bold;
             text-align: center;
-            padding: 65px 15px 0px 15px;
-            background: url('rhlogo.png') center top no-repeat;
+            padding: 0px 15px 0px 15px;
+            /* background: url('rhlogo.png') center top no-repeat; */
         }
 
         #clock {
@@ -145,7 +145,7 @@ ul {
 
             #qrcodes div {
                 display: inline-block;
-                width: 49.5%;
+                width: 48.5%;
                 text-align: center;
                 margin-bottom: 1em;
 
@@ -156,7 +156,7 @@ ul {
 
                 #qrcodes div img {
                    display: block;
-                   width: 78%;
+                   width: 90%;
                    margin: 0 auto 0.8em auto;
                 }
 
