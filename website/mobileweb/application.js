@@ -8,7 +8,7 @@ var remoteScheduleTsURL = "http://people.redhat.com/lsmid/devconf/mobileweb/sche
 // initialize global variables
 var schedule = null;
 var currentEvent = null;
-var scheduleDate = "2013-02-23";
+var scheduleDate = "1970-01-01";
 
 // remove record for debugging purposes
 // localStorage.removeItem("schedule");

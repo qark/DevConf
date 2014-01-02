@@ -7,8 +7,8 @@ import time
 import urllib
 import urllib2
 
-SCHEDORG_URL = "http://developerconference2013.sched.org/api/"
-SCHEDORG_RONLY_API_KEY = "001ce564d168d2c6a277616c8ef943b6"
+SCHEDORG_URL = "http://developerconference2014.sched.org/api/"
+SCHEDORG_RONLY_API_KEY = "d0cfd220bb1bd8ed848b718def0a35f8"
 
 def convertDate(text):
     t = time.strptime(text, "%Y-%m-%d %H:%M:%S")
@@ -51,7 +51,7 @@ def schedule2json(inp, timestamp):
         output["start"] = record["event_start"][-8:-3]
         output["end"] = record["event_end"][-8:-3]
         output["room"] = record["venue"]
-        output["speaker"] = record["speakers"]
+        output["speaker"] = record.get("speakers", "N/A")
         output["topic"] = sanitizeTopic(record["name"])
         output["description"] = removeHTMLTags(record.get("description", "N/A"))
         output["tags"] = []
