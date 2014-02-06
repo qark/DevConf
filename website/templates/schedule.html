@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+{% block subtitle %}
+- {{ date }}
+{% endblock %}
+{% block javascript %}
+<script type="text/javascript">
+    var timer = null;
+    
+	function addZero(i) {
+      if (i < 10) {
+        return "0" + i;
+      } else {
+        return i;
+      }
+    };
+    
+    function hidePastEvents() {
+        if (timer != null) {
+            clearTimeout(timer);
+            timer = null;
+        };
+		$("#timefilter").removeClass("hidden");      
+    	// $("a.list-group-item").addClass("hidden");
+    	var now = new Date();
+  		// for debugging only
+  		// now.setDate(7);
+  		// now.setMonth(1);
+    	var nowMinus10 = now.getTime() / 1000 - 600; // now - 10 minutes in seconds
+    	$("a.list-group-item").each( function (index, element) {
+		    if ($(this).data("start_time") < nowMinus10) {
+		     	$(this).addClass("hidden");
+     		} else {
+		     	$(this).removeClass("hidden");
+     		}
+    	});
+    	var t = now.getHours() + ":" + addZero(now.getMinutes());
+    	$("#message").html("Events starting before <strong>" + t + "</strong> are hidden");
+    	timer = setTimeout(hidePastEvents, 10000);
+    };
+
+	$(document).ready(function() {
+	    $("#showall").click(function () {
+	    	$("a.list-group-item").removeClass("hidden");
+	    	$("#timefilter").addClass("hidden");
+	    	clearTimeout(timer);
+	    	time = null;
+	    });
+	    $("#refresh").click(function () {
+		    hidePastEvents();
+	    });
+		// show or hide alert
+		var date = "{{ date }}";
+		var now = new Date();
+  		// for debugging only
+  		// now.setDate(7);
+  		// now.setMonth(1);
+  		var t = now.getFullYear() + "-" + addZero(now.getMonth() + 1) + "-" + addZero(now.getDate());
+		if (date == t) {
+		    hidePastEvents();
+		};
+	});
+</script>
+{% endblock %}
+{% block content %}
+        <div id="timefilter" class="alert alert-info hidden">
+            <p id="message">Past events are hidden</p>
+            <p class="text-right">
+        	<a id="refresh" href="#" class="alert-link"><span class="glyphicon glyphicon-refresh"></span> Refresh</a>
+        	&nbsp;
+        	<a id="showall" href="#" class="alert-link"><span class="glyphicon glyphicon-remove"></span> Show all</a>
+        	</p>
+        </div>
+		<ul class="list-group">
+		{% for event in schedule if event.start_date == date %}
+			<a class="list-group-item" data-toggle="collapse" data-target="#event{{ event.id }}" data-start_time="{{ event.start_time_ts }}">
+				<span class="caret pull-right"></span>
+				<h4 class="list-group-item-heading"><strong>{{ event.name }}</strong></h4>
+                <p class="list-group-item-text text-muted"><strong>{{ event.event_start_time }} - {{ event.event_end_time }}</strong> in <strong>{{ event.venue }}</strong></p>
+                {% if event.event_type %}
+                <p class="list-group-item-text">
+                	{% for item in event.event_type.split(",") %}
+                		<span class="label label-primary">{{ item }}</span>
+                	{% endfor %}
+                </p>
+                {% endif %}
+				<div id="event{{ event.id }}" class="collapse">
+				<hr />
+				{% for speaker in event.speakers %}
+				    <div><img src="{{ users[speaker.username].avatar }}" class="img-thumbnail">{{ speaker.name }}</div>
+				{% endfor %}
+				<p class="list-group-item-text">{{ event.description }}</p>
+				</div>
+			</a>
+		{% endfor %}
+		</ul>
+
+{% endblock %}

@@ -1,11 +1,16 @@
-body {
-    font-family: sans-serif;
-    font-size: 0.85em;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    background-color: #f7f3dc;
+html {
+    padding-left: 160px;
+    background: #ae0001 url('banner2.jpg') left top no-repeat;
 }
+
+    body {
+        font-family: sans-serif;
+        font-size: 0.85em;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        background-color: #f7f3dc;
+    }
 
 ul {
     list-style: none;
@@ -20,19 +25,43 @@ ul {
         background-color: #dedcc1;
     }
 
+/* Header */
+
+    #header {
+        position: relative;
+        height: 100px;
+        color: #fff;
+        padding-left: 30px;
+        padding-right: 230px;
+        background: #3c3c3c url('devconf.png') no-repeat;
+        background-position: right 10px center;
+    }
+
+        #header h1 {
+            font-size: 33px;
+            margin: 0;
+            padding: 15px 0 0 0;
+        }
+
+        #clock {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
 /* Blocks */
 
     .block {
         float: left;
-        width: 33.2%;
-        height: 650px;
+        width: 33.1%;
+        height: 650px; /* FIX[lsmid]: adjust height */
         margin: 0.1%;
         border-radius: 8px;
         background-color: #dedcc1;
         overflow: hidden;
 
         -moz-box-sizing: border-box;
-        -webkit-box-sizing: border-box; 
+        -webkit-box-sizing: border-box;
         box-sizing: border-box;
     }
 
@@ -53,36 +82,36 @@ ul {
             padding: 10px 12px;
 
             -moz-box-sizing: border-box;
-            -webkit-box-sizing: border-box; 
+            -webkit-box-sizing: border-box;
             box-sizing: border-box;
         }
 
-        .session .topic {
-            font-weight: bold;
-            line-height: 1.45em;
-            margin-bottom: 7px;
-        }
+            .session .topic {
+                font-weight: bold;
+                line-height: 1.45em;
+                margin-bottom: 7px;
+            }
 
-        .session .speaker {
-            font-style: italic;
-        }
+            .session .speaker {
+                font-style: italic;
+            }
 
-        .session .descr {
-            width: 100%;
-            color: #666;
-            font-size: small;
-            text-align: left;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            overflow: hidden;
-        }
+            .session .descr {
+                width: 100%;
+                color: #666;
+                font-size: small;
+                text-align: left;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+            }
 
-        .session .tag {
-            color: #fff;
-            padding: 2px 4px;
-            border-radius: 5px;
-            background-color: #000;
-        }
+            .session .tag {
+                color: #fff;
+                padding: 2px 4px;
+                border-radius: 5px;
+                background-color: #000;
+            }
 
         .current {
             background-color: #fff;
@@ -91,82 +120,19 @@ ul {
             .current .topic {
             }
 
-    /* Info block */
-
-    .infoblock {
-        position: relative;
-        float: left;
-        width: 33%;
-        height: 650px;
-        color: #fff;
-        margin: 0.1%;
-        padding-left: 160px;
-        border-radius: 8px;
-        background-color: #000;
-
-        -moz-box-sizing: border-box;
-        -webkit-box-sizing: border-box; 
-        box-sizing: border-box;
-    }
-
-        #header {
-            font-size: 1.9em;
-            font-weight: bold;
-            text-align: center;
-            padding: 0px 15px 0px 15px;
-            /* background: url('rhlogo.png') center top no-repeat; */
-        }
-
-        #clock {
-            font-size: 20px;
-            font-weight: bold;
-            text-align: center;
-            margin: 0 15px 1.5em 15px;
-            padding: 0.5em 0;
-            border-top: 1px solid #333;
-            border-bottom: 1px solid #333;
-        }
-
-        #banner {
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            float: left;
-            height: 100%;
-            width: 160px;
-            background: #ae0001 url('banner2.jpg') left top no-repeat;
-            margin-right: 1.5em;
-        }
-
-        #qrcodes {
-            width: 90%;
-            margin: 0 auto;
-        }
-
-            #qrcodes div {
-                display: inline-block;
-                width: 48.5%;
-                text-align: center;
-                margin-bottom: 1em;
-
-                -moz-box-sizing: border-box;
-                -webkit-box-sizing: border-box; 
-                box-sizing: border-box;
-            }
-
-                #qrcodes div img {
-                   display: block;
-                   width: 90%;
-                   margin: 0 auto 0.8em auto;
-                }
-
 /* Tweets */
 
 #tweets {
     clear: both;
-    height: 110px;
+    width: 100%;
+    height: 110px; /* FIX[lsmid]: adjust height (optionaly) */
+    padding: 7px 0 0 10px;
     overflow: hidden;
     background: #fff;
+
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
     #tweets div {
@@ -174,16 +140,15 @@ ul {
         width: 19%;
         height: 100%;
         vertical-align: top;
-        margin: 0 0 0.5% 0.5%;
-        padding: 0.5% 0.5% 0 0;
-        border-right: 1px dotted #ddd;
- 
-        -moz-box-sizing: border-box;
-        -webkit-box-sizing: border-box; 
-        box-sizing: border-box;
     }
 
-    #tweets div img {
-        float: left;
-        margin: 0 10px 0px 0;
+    #tweets > div + div {
+        margin-left: 10px;
+        padding-left: 10px;
+        border-left: 1px dotted #ddd;
     }
+
+        #tweets div img {
+            float: left;
+            margin: 0 10px 5px 0;
+        }

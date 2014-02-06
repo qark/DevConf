@@ -1,60 +1,110 @@
-<!DOCTYPE html> 
-<html> 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="favicon.png">
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1"> 
-  <title>DEVCONF.CZ</title> 
-  <link rel="stylesheet" href="themes/rh-theme.min.css" />
-  <link rel="stylesheet" href="jquery.mobile.structure-1.0.1.min.css" />
-  <script src="jquery-1.6.4.min.js"></script>
-  <script src="jquery.mobile-1.0.1.min.js"></script>
-  <script src="jsrender.js"></script>
-  <script src="application.js"></script>
-  <script type="text/javascript">
+    <title>DEVCONF.CZ
+- ABOUT
+</title>
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-28854907-1']);
-  _gaq.push(['_trackPageview']);
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/css/bootstrap.css" rel="stylesheet">
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
+    <!-- Custom styles for this template -->
+    <link href="navbar-fixed-top.css" rel="stylesheet">
 
-  </script>
-</head> 
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="vendor/html5shiv.js"></script>
+      <script src="vendor/respond.min.js"></script>
+    <![endif]-->
+    
+    <script type="text/javascript">
 
-<body> 
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-28854907-1']);
+	  _gaq.push(['_trackPageview']);
+	
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	
+    </script>
+    
 
-<div data-role="page">
+  </head>
 
-  <div data-role="header" data-theme="b">
-    <h1>DEVCONF.CZ</h1>
-    <a href="index.html" data-icon="home" data-direction="reverse" class="ui-btn-right jqm-home">Home</a>
-  </div><!-- /header -->
+  <body>
 
-  <div data-role="content">	
-    <p>Developer Conference is a yearly conference for all Linux and JBoss Developers, Admins
-    and Linux users organized by Red Hat Czech Republic, the Fedora and JBoss Community. 2013 DevConf
-    had over 60 talks in 3 different tracks and additional to that 3 more rooms with workshops
-    and hackfests. With around 600 participants <a href="http://www.devconf.cz">DevConf.cz</a> is one of the biggest events about
-    free software in the Czech Republic.</p>
-    <p>The conference organized by <a href="http://www.redhat.com">Red Hat Czech</a>.</p>
-    <dl>
-      <dt><strong>When:</strong></dt>
-      <dd>February 2014, Friday 7th - Sunday 9th</dd>
-      <dt><strong>Where:</strong></dt>
-      <dd>Faculty of Informatics, Masaryk University<br>Botanická 554/68a<br>602 00 Brno-Ponava<br>Czech Republic<br/>
-      <a href="geo:49.2099831,16.5989158" data-role="button" data-icon="search" data-inline="true">Map</a></dd>
-      <dt><strong>Admission:</strong></dt>
-      <dd>Free<br/>
-      <a href="http://developerconference2014.sched.org/" data-role="button" data-icon="star" data-inline="true">Register</a>
-    </dl>
-  </div><!-- /content -->
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">DEVCONF.CZ
+- ABOUT
+</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="index.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-list-alt"></span> Schedule <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="schedule20140207.html">Friday, February 7th</a></li>
+                <li><a href="schedule20140208.html">Saturday, February 8th</a></li>
+                <li><a href="schedule20140209.html">Sunday, February 9th</a></li>
+                <!--
+                <li class="divider"></li>
+                <li class="dropdown-header">Options</li>
+                <li><a href="#">Show past presentations</a></li>
+                -->
+              </ul>
+            </li>
+            <li><a href="about.html"><span class="glyphicon glyphicon-info-sign"></span> About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
 
-</div><!-- /page -->
+    <div class="container">
+      
+	    <p>Developer Conference is a yearly conference for all Linux and JBoss Developers, Admins
+	    and Linux users organized by Red Hat Czech Republic, the Fedora and JBoss Community. 2013 DevConf
+	    had over 60 talks in 3 different tracks and additional to that 3 more rooms with workshops
+	    and hackfests. With around 600 participants <a href="http://www.devconf.cz">DEVCONF.CZ</a> is one of the biggest events about
+	    free software in the Czech Republic.</p>
+	    <p>The conference is organized by <a href="http://www.redhat.com">Red Hat Czech</a>.</p>
+	    <dl>
+	      <dt><strong>When:</strong></dt>
+	      <dd>February 2014, Friday 7th - Sunday 9th</dd>
+	      <dt><strong>Where:</strong></dt>
+	      <dd>Faculty of Informatics, Masaryk University<br>Botanická 554/68a<br>602 00 Brno-Ponava<br>Czech Republic<br/>
+	      <a href="geo:49.2099831,16.5989158"><img src="map.png" class="img-responsive"></a></dd>
+	      <dt><strong>Admission:</strong></dt>
+	      <dd>Free<br/>
+	    </dl>
 
-</body>
+    </div> <!-- /container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="vendor/jquery-1.10.2.min.js"></script>
+    <script src="vendor/js/bootstrap.min.js"></script>
+    
+    
+  </body>
 </html>

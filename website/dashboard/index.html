@@ -2,44 +2,21 @@
 <html xmlns:ng="http://angularjs.org/" lang="en">
     <head>
         <meta charset="utf-8">
-        <title>DevConf 2013</title>
+        <title>DevConf 2014</title>
         <link type="text/css" href="style.css" rel="stylesheet">
         <script src="lib/angular-0.9.19.min.js" ng:autobind></script>
         <script src="lib/jquery-1.7.2.js" ng:autobind></script>
+        <script src="lib/codebird.js" ng:autobind></script>
         <script src="controllers.js"></script>
     </head>
 
     <body ng:controller="ScheduleCtrl">
-        <div id="schedule" class="infoblock">
-            <div id="banner"></div>
-
-            <h1 id="header">
-                Developer Conference 2013
-            </h1>
-            
-            <div id="clock">
-                {{ currentTime }}
-            </div>
-            
-            <div id="qrcodes">
-                <div>
-                    <img src="qrcode-android-store.png" />
-                    DevConf App for <strong>Android</strong>
-                </div>
-                
-                <div class="qrcode">
-                    <img src="meego.png"/>
-                    MeeGo App for <strong>Nokia N9</strong>
-                </div>
-
-                <div class="qrcode">
-                    <img src="qrcode-mobileweb.png" />
-                    Mobile website <strong>http://bit.ly/dev2013</strong>
-                </div>
-            </div>
+        <div id="header">
+            <h1>Developer Conference 2014, Brno, Czech Republic</h1>
+            <div id="clock">{{ currentTime }}</div>
         </div>
 
-        <div id="schedule" class="block" ng:repeat="block in eventBlocks">
+        <div id="schedule-events" class="block" ng:repeat="block in eventBlocks">
             <div class="name">{{ block.start }}</div>
             <ul>
                 <li ng:repeat="event in block.events">
@@ -48,10 +25,12 @@
                             <span ng:repeat="tag in event.tags">
                                 <span class="tag">{{ tag }}</span>
                             </span>
+
                             {{ event.topic }}
+
                             <span class="speaker"> by {{ event.speaker }}</span>
                         </div>
-                        
+
                         {{ event.room }}
                     </div>
                 </li>
