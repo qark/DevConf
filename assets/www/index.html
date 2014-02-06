@@ -1,40 +1,90 @@
-<!DOCTYPE html> 
-<html> 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="favicon.png">
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1"> 
-  <title>DEVCONF.CZ</title>
-  <link rel="stylesheet" href="themes/rh-theme.min.css" />
-  <link rel="stylesheet" href="jquery.mobile.structure-1.0.1.min.css" />
-  <script src="jquery-1.6.4.min.js"></script>
-  <script src="jquery.mobile-1.0.1.min.js"></script>
-  <script src="jsrender.js"></script>
-  <script src="application.js"></script>
-  <script type="text/javascript" src="cordova-2.4.0.js"></script>
-</head> 
+    <title>DEVCONF.CZ</title>
 
-<body> 
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/css/bootstrap.css" rel="stylesheet">
 
-<div data-role="page">
+    <!-- Custom styles for this template -->
+    <link href="navbar-fixed-top.css" rel="stylesheet">
 
-  <div data-role="header" data-theme="b">
-    <h1>DEVCONF.CZ</h1>
-  </div><!-- /header -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="vendor/html5shiv.js"></script>
+      <script src="vendor/respond.min.js"></script>
+    <![endif]-->
+    
+	 <script type="text/javascript" src="vendor/cordova-2.4.0.js"></script>
+    
 
-  <div data-role="content">
-      <img src="logo.png" width="100%" />
-      <br />
-      <a href="#" data-role="button" data-theme="b" onclick="displaySchedule('2014-02-07');">Schedule - Feb 7</a>
-      <a href="#" data-role="button" data-theme="b" onclick="displaySchedule('2014-02-08');">Schedule - Feb 8</a>
-      <a href="#" data-role="button" data-theme="b" onclick="displaySchedule('2014-02-09');">Schedule - Feb 9</a>
-      <!-- <a href="twitter.html" data-role="button" data-theme="b">#devconf</a> -->
-      <a href="about.html" data-role="button" data-theme="b">About</a>
-    <!-- <a href="http://jobs.redhat.com/" data-role="button" data-theme="a">RED HAT IS HIRING!</a> --?
-    <center>Issues or comments? <a href="mailto:info@redhatters.cz">E-mail us!</a></center>
-  </div><!-- /content -->
+  </head>
 
-</div><!-- /page -->
+  <body>
 
-</body>
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">DEVCONF.CZ</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="index.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-list-alt"></span> Schedule <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="schedule20140207.html">Friday, February 7th</a></li>
+                <li><a href="schedule20140208.html">Saturday, February 8th</a></li>
+                <li><a href="schedule20140209.html">Sunday, February 9th</a></li>
+                <!--
+                <li class="divider"></li>
+                <li class="dropdown-header">Options</li>
+                <li><a href="#">Show past presentations</a></li>
+                -->
+              </ul>
+            </li>
+            <li><a href="about.html"><span class="glyphicon glyphicon-info-sign"></span> About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="container">
+      
+      <div class="jumbotron">
+          <img src="logo.png" class="img-rounded img-responsive">
+      </div>
+      <div>
+      <a class="btn btn-lg btn-primary btn-block" href="schedule20140207.html" role="button">Feb 7 schedule</a>
+      <a class="btn btn-lg btn-primary btn-block" href="schedule20140208.html" role="button">Feb 8 schedule</a>
+      <a class="btn btn-lg btn-primary btn-block" href="schedule20140209.html" role="button">Feb 9 schedule</a>
+      <a class="btn btn-lg btn-default btn-block" href="about.html" role="button">About</a>
+      </div>
+      <p></p>
+      <p class="text-center"><a href="mailto:info@redhatters.cz">Issues or comments?</a></p>
+
+    </div> <!-- /container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="vendor/jquery-1.10.2.min.js"></script>
+    <script src="vendor/js/bootstrap.min.js"></script>
+    
+    
+  </body>
 </html>

@@ -18,6 +18,6 @@ run-mobileweb :
 sync:
 	rsync -av --delete dashboard/ lsmid@people.redhat.com:public_html/devconf/dashboard
 	rsync -av --delete mobileweb/ lsmid@people.redhat.com:public_html/devconf/mobileweb
-	rsync -av --delete mobileweb/ root@ospace.cz:/var/www/m.devconf.cz/
+#	rsync -av --delete mobileweb/ root@ospace.cz:/var/www/m.devconf.cz/
 
 

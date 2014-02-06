@@ -90,7 +90,7 @@ var tweets = setInterval(function() {
         $.ajax({
             type: "GET",
             dataType: "jsonp",
-            url: "http://search.twitter.com/search.json?q=%23devconf%20OR%20%40redhatcz&rpp=10&callback=?",
+            url: "http://search.twitter.com/search.json?q=%23DevConfBrno%20OR%20%40redhatcz&rpp=10&callback=?",
             success: function(response) {
                 $('#tweets').empty();
 
