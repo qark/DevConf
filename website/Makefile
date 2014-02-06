@@ -1,14 +1,14 @@
-.PHONY: run all sync sync-people mobileweb/schedule.json mobileweb/schedule.xml
+.PHONY: all sync mobileweb/index.html
 
-all: mobileweb/schedule.json mobileweb/schedule-ts.json mobileweb/schedule.xml
+all: mobileweb/index.html
 
-mobileweb/schedule.json: tools/schedorg2json.py
-	tools/schedorg2json.py mobileweb/
-	tools/schedorg2json.py dashboard/
+mobileweb/index.html: tools/schedorg2web.py
+	tools/schedorg2web.py mobileweb/ WEB
+	cp mobileweb/schedule*.json dashboard/
 
-#mobileweb/schedule.xml:
-#	tools/devconf_schedule.py mobileweb/schedule.json > mobileweb/schedule.xml
-	
+cordova: tools/schedorg2web.py
+	tools/schedorg2web.py ../assets/www/ CORDOVA
+
 run-dashboard :
 	@cd dashboard ; python -m SimpleHTTPServer
 
@@ -18,6 +18,4 @@ run-mobileweb :
 sync:
 	rsync -av --delete dashboard/ lsmid@people.redhat.com:public_html/devconf/dashboard
 	rsync -av --delete mobileweb/ lsmid@people.redhat.com:public_html/devconf/mobileweb
-#	rsync -av --delete mobileweb/ root@ospace.cz:/var/www/m.devconf.cz/
-
-
+	rsync -av --delete mobileweb/ root@ospace.cz:/var/www/m.devconf.cz/
