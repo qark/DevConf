@@ -104,7 +104,7 @@ cb.setToken("122488572-oDW67BugvGbi5ylneiBWKisKdxWAzT7r59tq21Dk", "OdctR7PfqxoJE
 var fetchTweets = function() {
     cb.__call(
         "search_tweets",
-        "q=%23DevConfBrno&result_type=recent&count=10",
+        "q=%23devconfcz&result_type=recent&count=10",
         function(response) {
             $('#tweets').empty();
 
