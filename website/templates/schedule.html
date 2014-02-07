@@ -33,6 +33,7 @@
 		     	$(this).removeClass("hidden");
      		}
     	});
+        now.setTime(nowMinus10 * 1000);
     	var t = now.getHours() + ":" + addZero(now.getMinutes());
     	$("#message").html("Events starting before <strong>" + t + "</strong> are hidden");
     	timer = setTimeout(hidePastEvents, 10000);
@@ -71,7 +72,7 @@
         	</p>
         </div>
 		<ul class="list-group">
-		{% for event in schedule if event.start_date == date %}
+		{% for event in schedule if event.start_date == date and event.active == "Y" %}
 			<a class="list-group-item" data-toggle="collapse" data-target="#event{{ event.id }}" data-start_time="{{ event.start_time_ts }}">
 				<span class="caret pull-right"></span>
 				<h4 class="list-group-item-heading"><strong>{{ event.name }}</strong></h4>

@@ -236,7 +236,7 @@
 			<a class="list-group-item" data-toggle="collapse" data-target="#event803b1e1df44848b7fac60867b92b1d33" data-start_time="1391763000">
 				<span class="caret pull-right"></span>
 				<h4 class="list-group-item-heading"><strong>Eclipse Platform Unleashed</strong></h4>
-                <p class="list-group-item-text text-muted"><strong>09:50 - 11:20</strong> in <strong>Workshop room L3 - 511</strong></p>
+                <p class="list-group-item-text text-muted"><strong>09:50 - 11:20</strong> in <strong>Workshop room L3 - C511</strong></p>
                 
                 <p class="list-group-item-text">
                 	
@@ -375,26 +375,6 @@
 				</div>
 			</a>
 		
-			<a class="list-group-item" data-toggle="collapse" data-target="#event629b2cfbdbc67cf85600fde8195ac155" data-start_time="1391769000">
-				<span class="caret pull-right"></span>
-				<h4 class="list-group-item-heading"><strong>jQuery UI Widget Factory Deep Dive</strong></h4>
-                <p class="list-group-item-text text-muted"><strong>11:30 - 12:10</strong> in <strong>Lecture room D2</strong></p>
-                
-                <p class="list-group-item-text">
-                	
-                		<span class="label label-primary">Developer</span>
-                	
-                </p>
-                
-				<div id="event629b2cfbdbc67cf85600fde8195ac155" class="collapse">
-				<hr />
-				
-				    <div><img src="avatars/brianleathem.jpg" class="img-thumbnail">Brian Leathem</div>
-				
-				<p class="list-group-item-text">Whether you buy into the hype of developing fat-clients with modern javascript web frameworks, or if you still follow the traditional approach of server-side rendering, the trend of increased complexity in the browser is evident.  Users expect more out of web interfaces, and more is being asked of web developers to meet those expectations.  As a result we are finding more and more javascript present into our web applications<br /><br />Best practices however still apply, and suggest that we encapsulate our client-side code to avoid repetition (stay DRY), allow for code reuse, and to improve the testability of our applications.  JQuery plugins are the de-facto standard providing the mechanism for such encapsulation.  The jQuery UI widget factory provides us with a mechanism for developing stateful jQuery plugins; defining a plugin lifecycle allows for the removal of much boilerplate code.<br /><br />In this session we will look at developing jQuery plugins using the jQuery UI widget factory.  With a focus on creating visual plugins (widgets), we will explore the widget factory lifecycle, discuss best practices in widget development, and explore some of the pitfalls of developing stateful widgets.  Finally we will conclude with an overview of the RichWidget widget set, and lay the groundwork for your contributions to the project!</p>
-				</div>
-			</a>
-		
 			<a class="list-group-item" data-toggle="collapse" data-target="#event5ea92e88ceacf17becf05bc7810beb1a" data-start_time="1391769000">
 				<span class="caret pull-right"></span>
 				<h4 class="list-group-item-heading"><strong>DevAssistant - What's in It for You?</strong></h4>
@@ -438,7 +418,7 @@
 			<a class="list-group-item" data-toggle="collapse" data-target="#eventa9bc283223374255fa191b89fd79d2db" data-start_time="1391769000">
 				<span class="caret pull-right"></span>
 				<h4 class="list-group-item-heading"><strong>Thermostat - Show YOUR Java Application's Performance Metrics</strong></h4>
-                <p class="list-group-item-text text-muted"><strong>11:30 - 13:10</strong> in <strong>Workshop room L3 - 511</strong></p>
+                <p class="list-group-item-text text-muted"><strong>11:30 - 13:10</strong> in <strong>Workshop room L3 - C511</strong></p>
                 
                 <p class="list-group-item-text">
                 	
@@ -646,7 +626,7 @@
 			<a class="list-group-item" data-toggle="collapse" data-target="#event4598469771d7173667aa16725e10da8a" data-start_time="1391775600">
 				<span class="caret pull-right"></span>
 				<h4 class="list-group-item-heading"><strong>Ceylon Hackfest</strong></h4>
-                <p class="list-group-item-text text-muted"><strong>13:20 - 14:50</strong> in <strong>Workshop room L3 - 511</strong></p>
+                <p class="list-group-item-text text-muted"><strong>13:20 - 14:50</strong> in <strong>Workshop room L3 - C511</strong></p>
                 
                 <p class="list-group-item-text">
                 	
@@ -838,7 +818,7 @@
 			<a class="list-group-item" data-toggle="collapse" data-target="#event17f50fa9c9c94b79b44058478ea8349d" data-start_time="1391781600">
 				<span class="caret pull-right"></span>
 				<h4 class="list-group-item-heading"><strong>Byteman Workshop</strong></h4>
-                <p class="list-group-item-text text-muted"><strong>15:00 - 16:30</strong> in <strong>Workshop room L3 - 511</strong></p>
+                <p class="list-group-item-text text-muted"><strong>15:00 - 16:30</strong> in <strong>Workshop room L3 - C511</strong></p>
                 
                 <p class="list-group-item-text">
                 	
@@ -1022,7 +1002,7 @@
 			<a class="list-group-item" data-toggle="collapse" data-target="#eventd8dcc4279ec300b0c0edc229c891bb53" data-start_time="1391787600">
 				<span class="caret pull-right"></span>
 				<h4 class="list-group-item-heading"><strong>USB protocol & architecture overview </strong></h4>
-                <p class="list-group-item-text text-muted"><strong>16:40 - 17:20</strong> in <strong>Workshop room L3 - 511</strong></p>
+                <p class="list-group-item-text text-muted"><strong>16:40 - 17:20</strong> in <strong>Workshop room L3 - C511</strong></p>
                 
                 <p class="list-group-item-text">
                 	
@@ -1148,6 +1128,7 @@
 		     	$(this).removeClass("hidden");
      		}
     	});
+        now.setTime(nowMinus10 * 1000);
     	var t = now.getHours() + ":" + addZero(now.getMinutes());
     	$("#message").html("Events starting before <strong>" + t + "</strong> are hidden");
     	timer = setTimeout(hidePastEvents, 10000);

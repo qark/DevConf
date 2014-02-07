@@ -333,28 +333,6 @@
 				</div>
 			</a>
 		
-			<a class="list-group-item" data-toggle="collapse" data-target="#eventd65d4cb301f839096378a4ab67328031" data-start_time="1391948400">
-				<span class="caret pull-right"></span>
-				<h4 class="list-group-item-heading"><strong>fedora-upgrade - How to?</strong></h4>
-                <p class="list-group-item-text text-muted"><strong>13:20 - 15:20</strong> in <strong>Lecture room D3</strong></p>
-                
-                <p class="list-group-item-text">
-                	
-                		<span class="label label-primary">Admin</span>
-                	
-                		<span class="label label-primary"> Fedora</span>
-                	
-                </p>
-                
-				<div id="eventd65d4cb301f839096378a4ab67328031" class="collapse">
-				<hr />
-				
-				    <div><img src="avatars/miroslavsuchy.jpg" class="img-thumbnail">Miroslav Suchy</div>
-				
-				<p class="list-group-item-text">Upgrading from Fedora n to n+1 using yum, how to enhance it, what should be done differently, ideas.</p>
-				</div>
-			</a>
-		
 			<a class="list-group-item" data-toggle="collapse" data-target="#event9bc0f04bf2e40c1165396b3e3f254394" data-start_time="1391948400">
 				<span class="caret pull-right"></span>
 				<h4 class="list-group-item-heading"><strong>systemd - discuss/solve Fedora related problems </strong></h4>
@@ -377,10 +355,32 @@
 				</div>
 			</a>
 		
+			<a class="list-group-item" data-toggle="collapse" data-target="#eventd65d4cb301f839096378a4ab67328031" data-start_time="1391948400">
+				<span class="caret pull-right"></span>
+				<h4 class="list-group-item-heading"><strong>fedora-upgrade - How to?</strong></h4>
+                <p class="list-group-item-text text-muted"><strong>13:20 - 15:20</strong> in <strong>Workshop room L2 - C525</strong></p>
+                
+                <p class="list-group-item-text">
+                	
+                		<span class="label label-primary">Admin</span>
+                	
+                		<span class="label label-primary"> Fedora</span>
+                	
+                </p>
+                
+				<div id="eventd65d4cb301f839096378a4ab67328031" class="collapse">
+				<hr />
+				
+				    <div><img src="avatars/miroslavsuchy.jpg" class="img-thumbnail">Miroslav Suchy</div>
+				
+				<p class="list-group-item-text">Upgrading from Fedora n to n+1 using yum, how to enhance it, what should be done differently, ideas.</p>
+				</div>
+			</a>
+		
 			<a class="list-group-item" data-toggle="collapse" data-target="#event0f9c019bf80a568d8f72af9546fa1126" data-start_time="1391948400">
 				<span class="caret pull-right"></span>
 				<h4 class="list-group-item-heading"><strong>DevAssistant</strong></h4>
-                <p class="list-group-item-text text-muted"><strong>13:20 - 14:20</strong> in <strong>Workshop room L3 - 511</strong></p>
+                <p class="list-group-item-text text-muted"><strong>13:20 - 14:20</strong> in <strong>Workshop room L3 - C511</strong></p>
                 
                 <p class="list-group-item-text">
                 	
@@ -438,6 +438,7 @@
 		     	$(this).removeClass("hidden");
      		}
     	});
+        now.setTime(nowMinus10 * 1000);
     	var t = now.getHours() + ":" + addZero(now.getMinutes());
     	$("#message").html("Events starting before <strong>" + t + "</strong> are hidden");
     	timer = setTimeout(hidePastEvents, 10000);
